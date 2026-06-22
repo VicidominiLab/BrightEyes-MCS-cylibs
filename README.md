@@ -53,10 +53,10 @@ Release flow:
 ```bat
 git add .
 git commit -m "Prepare BrightEyes-MCS Cython wheels"
-git tag v0.1.0
+git tag v0.1.3
 git push origin master --tags
 ```
 
 PyPI files are immutable. For every new upload, bump `version` in
 `pyproject.toml` and `__version__` in `src\brighteyes_mcs_cylibs\__init__.py`,
-then create a matching new tag such as `v0.1.1`.
+then create a matching new tag such as `v0.1.4`.
