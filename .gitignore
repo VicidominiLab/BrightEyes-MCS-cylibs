@@ -1,0 +1,33 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python cache and test output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments and packaging artifacts
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Generated Cython build outputs
+src/brighteyes_mcs_cylibs/*.c
+src/brighteyes_mcs_cylibs/*.html
+src/brighteyes_mcs_cylibs/*.pyd
+src/brighteyes_mcs_cylibs/*.so
+src/brighteyes_mcs_cylibs/*.dll
+src/brighteyes_mcs_cylibs/*.dylib

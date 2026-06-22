@@ -1,0 +1,53 @@
+[build-system]
+requires = [
+    "setuptools>=70",
+    "wheel",
+    "Cython>=3.1.1",
+    "numpy>=2.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brighteyes-mcs-cylibs"
+version = "0.1.0"
+description = "Compiled Cython extensions used by BrightEyes-MCS."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE.md" }
+authors = [
+    { name = "VicidominiLab" },
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Cython",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "numpy>=1.23",
+]
+
+[project.urls]
+Homepage = "https://github.com/VicidominiLab/BrightEyes-MCS"
+Source = "https://github.com/VicidominiLab/BrightEyes-MCS-cylibs"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+brighteyes_mcs_cylibs = ["*.pyx"]
+
+[tool.cibuildwheel]
+build = "cp310-* cp311-* cp312-* cp313-* cp314-*"
+skip = "pp* *-musllinux_*"
+test-command = 'python -c "import brighteyes_mcs_cylibs.fastconverter; import brighteyes_mcs_cylibs.autocorrelator; import brighteyes_mcs_cylibs.timeBinner"'
